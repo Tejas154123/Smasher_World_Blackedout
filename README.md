@@ -27,7 +27,11 @@ The website contains:
 - A flashlight and a black screen
 
 
+<img width="1897" height="910" alt="ss1" src="https://github.com/user-attachments/assets/cbcd856f-0281-496f-ab3d-62d9ba61f183" />
 
+<img width="1902" height="905" alt="ss2" src="https://github.com/user-attachments/assets/637f6474-d51a-4cea-80a1-4315afe0e103" />
+
+<img width="1898" height="911" alt="ss3" src="https://github.com/user-attachments/assets/0e1a8f45-2288-4642-824a-483a96118c86" />
 
 
 
