@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Smasher_World
 Enter the world of Smasher and get to know more about him, his interests, and the projects he has worked on.
 
@@ -7,10 +6,11 @@ Smasher World is a personal portfolio-style website that introduces me, my inter
 The initial design of this project was created using Figma. I then converted the design into a working website using HTML and CSS
 
 ## Development
-The core languages used in this project are:
+The languages used in this project are:
 
 HTML – Used to create the structure and content of the website.
 CSS – Used for styling, layout, responsive design, and animations.
+JavaScript-For adding the flashlight feature (actually used ai for this part especially as I am a begginer only)
 
 The animation and some parts of the implementation were developed with the help of AI tools. The overall concept, content, project selection, and design was created by me
 
@@ -24,16 +24,13 @@ The website contains:
 - AI-based projects
 - Photos from my real-life projects
 - Some photo of my robot
-- A responsive layout for smaller screens
+- A flashlight and a black screen
 
-## Projects
-Some of the projects showcased on the website are based on my interest in robotics, electronics, programming, and AI.
-I have been experimenting with different hardware and software projects and this website acts as a place where I can showcase some of that work.
 
-<img width="1352" height="601" alt="image" src="https://github.com/user-attachments/assets/8d513638-237d-4206-a53a-1b87a4d19daa" />
+
+
 
 
 **Made by Smasher**
-=======
-# Smasher_World_Blackedout
->>>>>>> 71f346f996371b2764633df6feab6a9e115e5483
+
+
