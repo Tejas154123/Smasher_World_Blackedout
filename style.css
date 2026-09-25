@@ -8,7 +8,6 @@ body {
   font-family: 'Pixelify Sans', cursive, monospace, sans-serif;
   color: #000000;
   background-color: #FFF79A;
-  /* Figma Retro 2px Grid */
   background-image: 
     linear-gradient(to right, #000000 2.5px, transparent 2.5px),
     linear-gradient(to bottom, #000000 2.5px, transparent 2.5px);
@@ -26,7 +25,6 @@ body {
   max-width: 1240px;
 }
 
-
 .brutal-shadow {
   box-shadow: 6px 6px 0px #000000;
 }
@@ -43,14 +41,12 @@ body {
   box-shadow: 5px 5px 0px #000000;
 }
 
-
 .portfolio-grid {
   display: grid;
   grid-template-columns: 420px 1fr;
   gap: 48px;
   align-items: start;
 }
-
 
 .left-column {
   display: flex;
@@ -59,7 +55,6 @@ body {
   width: 100%;
 }
 
-/* 1. Header Badge: SMASHER WORLD */
 .card-smasher-world {
   background-color: #80F59C;
   border: 3.5px solid #000000;
@@ -74,7 +69,6 @@ body {
   text-transform: uppercase;
 }
 
-/* 2. Avatar Card */
 .card-avatar {
   width: 100%;
   aspect-ratio: 1 / 1;
@@ -93,7 +87,6 @@ body {
   display: block;
 }
 
-/* 3. Pill Tag: SMASHER_GUY */
 .badge-smasher-guy {
   background-color: #FF5C72;
   border: 3.5px solid #000000;
@@ -111,7 +104,6 @@ body {
   letter-spacing: 1px;
 }
 
-/* 4. Orange Bio Info Card */
 .card-info {
   background-color: #FFA652;
   border: 3.5px solid #000000;
@@ -147,13 +139,11 @@ body {
   white-space: nowrap;
 }
 
-
 .right-column {
   position: relative;
   width: 100%;
 }
 
-/* Floating Tilted Polaroid Photos */
 .floating-photo {
   position: absolute;
   width: 110px;
@@ -201,7 +191,6 @@ body {
   transform: rotate(-12deg);
 }
 
-/* Blue Projects Box */
 .card-projects {
   background-color: #82B1FF;
   border: 3.5px solid #000000;
@@ -228,7 +217,6 @@ body {
   font-weight: 600;
 }
 
-/* Featured Robot Car Container */
 .robot-image-box {
   width: 100%;
   max-width: 520px;
@@ -250,7 +238,6 @@ body {
   display: block;
 }
 
-/* Red Bidirectional Arrow */
 .red-arrow-divider {
   display: flex;
   align-items: center;
@@ -269,13 +256,11 @@ body {
   margin: 0 3px;
 }
 
-/* AI Projects Section */
 .ai-projects-list {
   display: flex;
   flex-direction: column;
   gap: 16px;
 }
-
 
 .footer-note {
   text-align: center;
@@ -285,33 +270,120 @@ body {
   letter-spacing: 2px;
   opacity: 0.7;
 }
-.blackout-active{
+.blackout-active {
   cursor: none !important;
 }
-.blackout-active button, .blackout-active a {
+
+.blackout-active button, 
+.blackout-active a {
   cursor: pointer !important;
 }
-#blackout-curtain{
-  position:fixed;
-  inset 0;
+
+#blackout-curtain {
+  position: fixed;
+  inset: 0;
   background-color: #000000;
   z-index: 9990;
   pointer-events: none;
 }
+
 #flashlight-beam-glow {
   position: fixed;
   inset: 0;
   mix-blend-mode: screen;
   z-index: 9992;
-  pointer-events:none;
+  pointer-events: none;
 }
-#flashlight-torch{
+
+#flashlight-torch {
   position: fixed;
   z-index: 9995;
   pointer-events: none;
-  transform: translate(95px,95px) rotate(45deg);
+  transform: translate(65px, 65px) rotate(45deg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
+.torch-bezel {
+  width: 52px;
+  height: 22px;
+  border-radius: 6px 6px 0 0;
+  border: 3px solid #000000;
+  background: linear-gradient(to bottom, #525252, #171717);
+  box-shadow: 0 -4px 16px #FACC15;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.torch-diode {
+  width: 22px;
+  height: 10px;
+  border-radius: 9999px;
+  background-color: #FACC15;
+  box-shadow: 0 0 10px #FACC15;
+}
+
+.torch-cone {
+  width: 42px;
+  height: 14px;
+  background: linear-gradient(to right, #262626, #525252, #262626);
+  border-left: 2px solid #000000;
+  border-right: 2px solid #000000;
+}
+
+.torch-grip {
+  width: 34px;
+  height: 95px;
+  background: linear-gradient(to right, #0a0a0a, #262626, #0a0a0a);
+  border: 3px solid #000000;
+  border-radius: 0 0 6px 6px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.85);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.torch-switch {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #FACC15;
+  box-shadow: 0 0 8px #FACC15;
+  border: 1px solid #000000;
+}
+
+.torch-pommel {
+  width: 26px;
+  height: 10px;
+  background-color: #262626;
+  border: 2px solid #000000;
+  border-radius: 0 0 4px 4px;
+}
+
+#blackout-hud {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+}
+
+#btn-toggle-light {
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 14px;
+  padding: 10px 16px;
+  background-color: #FFF79A;
+  border: 3px solid #000000;
+  box-shadow: 4px 4px 0px #000000;
+  cursor: pointer;
+}
+
+#btn-toggle-light:hover {
+  background-color: #FACC15;
+}
 
 @media (max-width: 992px) {
   .portfolio-grid {
@@ -329,6 +401,6 @@ body {
   }
 
   .floating-photo {
-    display: none; /* Hide floating photos on small screens so they don't block text */
+    display: none;
   }
 }
