@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Smasher_World
 Enter the world of Smasher and get to know more about him, his interests, and the projects he has worked on.
 
@@ -33,3 +34,6 @@ I have been experimenting with different hardware and software projects and this
 
 
 **Made by Smasher**
+=======
+# Smasher_World_Blackedout
+>>>>>>> 71f346f996371b2764633df6feab6a9e115e5483
