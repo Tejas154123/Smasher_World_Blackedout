@@ -9,47 +9,38 @@
   <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="blackout-active">
   <div id="blackout-curtain"></div>
   <div id="flashlight-beam-glow"></div>
-  <div id="flashlight-torch"></div>
-    <div class="torch-benzel"><div class="torch-diode"></div></div>
+
+  <div id="flashlight-torch">
+    <div class="torch-bezel"><div class="torch-diode"></div></div>
     <div class="torch-cone"></div>
-    <div class="torch grip"><div class="torch-switch"></div></div>
+    <div class="torch-grip"><div class="torch-switch"></div></div>
     <div class="torch-pommel"></div>
-</div>
-<div id="blackout-hud">
-  <button id="btn-toggle-light"type="button">LIGHTS ON</button>
-</div>
+  </div>
+
+  <div id="blackout-hud">
+    <button id="btn-toggle-light" type="button">🔦 LIGHTS ON</button>
+  </div>
 
   <div class="container">
     <main class="portfolio-grid">
 
-      <!-- ================= LEFT COLUMN ================= -->
       <section class="left-column">
-        
-        <!-- Header Badge: SMASHER WORLD -->
         <div class="card-smasher-world brutal-shadow">
           <h1>SMASHER WORLD</h1>
         </div>
 
-        <!-- Profile Photo -->
         <div class="card-avatar brutal-shadow">
-          <img 
-            id="avatar" 
-            src="avatar.jpeg" 
-            alt="Smasher Guy Avatar"
-          />
+          <img id="avatar" src="avatar.jpeg" alt="Smasher Guy Avatar">
         </div>
 
-        <!-- Pill Tag: SMASHER_GUY -->
         <div class="badge-smasher-guy brutal-shadow-pill">
           <span>SMASHER_GUY</span>
         </div>
 
-        <!-- Personal Info Card -->
         <div class="card-info brutal-shadow">
-          
           <div class="info-row">
             <span class="info-label">AGE</span>
             <div class="arrow-line"><span>───────────&gt;</span></div>
@@ -73,15 +64,10 @@
             <div class="arrow-line"><span>────────&gt;</span></div>
             <span class="info-value">CODING and ROBOTICS</span>
           </div>
-
         </div>
-
       </section>
 
-      <!-- ================= RIGHT COLUMN ================= -->
       <section class="right-column">
-
-        <!-- 4 Tilted Floating Polaroid Photos -->
         <div class="floating-photo pos-top-left brutal-shadow-sm">
           <img src="photo1.jpeg" alt="Arduino car component">
         </div>
@@ -98,31 +84,23 @@
           <img src="photo4.jpeg" alt="Robotics component">
         </div>
 
-        <!-- Projects Box -->
         <div class="card-projects brutal-shadow-lg">
-          
           <h2 class="projects-title">PROJECTS I HAVE<br>WORKED ON TILL NOW</h2>
 
           <p class="project-text">
             ROBOTS- Obstacle Avoidance Car with ultrasonic sensors and having both manual and automatic modes all controlled through esp 32 and arduino UNO ,can be controlled via wifi.
           </p>
 
-          <!-- Main Robot Image -->
           <div class="robot-image-box brutal-shadow-sm">
-            <img 
-              src="main-robot.png" 
-              alt="Obstacle Avoidance Robot Car"
-            />
+            <img src="main-robot.png" alt="Obstacle Avoidance Robot Car">
           </div>
 
-          <!-- Red Bidirectional Arrow Divider -->
           <div class="red-arrow-divider">
             <span>&lt;</span>
             <div class="arrow-line-fill"></div>
             <span>&gt;</span>
           </div>
 
-          <!-- AI Projects -->
           <div class="ai-projects-list project-text">
             <p>
               <strong>AI= Praj</strong> ,an ai which runs in the background of your system and does whatever you say or type in its terminal and stays limited to your system only keeping the data safe.
@@ -131,35 +109,58 @@
               <strong>AI= Aether</strong> , an ai which can evolve itself and which is connected with autonomous learning workflows, local model execution, and hardware controls.
             </p>
           </div>
-
         </div>
-
       </section>
 
     </main>
 
-    <!-- Footer -->
     <footer class="footer-note">
       SMASHER WORLD • PORTFOLIO • ROBOTICS &amp; AI
     </footer>
   </div>
-  window.addEventListener('mousemove',(e)=>{
-    const x = e.clientX;
-    const y = e.clientY;
-    torch.style.left = x + 'px';
-    torch.style.top = y + 'px';
-    curtain.style.background = `radial-gradient(
-      circle 150px at ${x}px ${y}px,
-      transparent 0%,
-      rgba(0,0,0,0.35) 120px,
-      #000000 156px
-    )`;
-    glow.style.background = `radial-gradient(
-      circle 190px at ${x}px ${y}px,
-      rgba(255, 250, 200, 0.40) 0%,
-      transparent 190px
-    )`;
-  });
 
+  <script>
+    const curtain = document.getElementById('blackout-curtain');
+    const glow = document.getElementById('flashlight-beam-glow');
+    const torch = document.getElementById('flashlight-torch');
+    const btnToggle = document.getElementById('btn-toggle-light');
+    let isFlashlightOn = true;
+
+    function moveTorch(x, y) {
+      if (!isFlashlightOn) return;
+      torch.style.left = x + 'px';
+      torch.style.top = y + 'px';
+      curtain.style.background = `radial-gradient(
+        circle 150px at ${x}px ${y}px,
+        transparent 0%,
+        rgba(0,0,0,0.35) 120px,
+        #000000 156px
+      )`;
+      glow.style.background = `radial-gradient(
+        circle 190px at ${x}px ${y}px,
+        rgba(255, 250, 200, 0.40) 0%,
+        transparent 190px
+      )`;
+    }
+
+    window.addEventListener('mousemove', (e) => {
+      moveTorch(e.clientX, e.clientY);
+    });
+
+    window.addEventListener('touchmove', (e) => {
+      if (e.touches.length > 0) {
+        moveTorch(e.touches[0].clientX, e.touches[0].clientY);
+      }
+    });
+
+    btnToggle.addEventListener('click', () => {
+      isFlashlightOn = !isFlashlightOn;
+      document.body.classList.toggle('blackout-active', isFlashlightOn);
+      curtain.style.display = isFlashlightOn ? 'block' : 'none';
+      glow.style.display = isFlashlightOn ? 'block' : 'none';
+      torch.style.display = isFlashlightOn ? 'block' : 'none';
+      btnToggle.textContent = isFlashlightOn ? '🔦 LIGHTS ON' : '⚡ FLASHLIGHT ON';
+    });
+  </script>
 </body>
 </html>
