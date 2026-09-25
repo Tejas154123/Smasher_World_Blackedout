@@ -10,6 +10,17 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div id="blackout-curtain"></div>
+  <div id="flashlight-beam-glow"></div>
+  <div id="flashlight-torch"></div>
+    <div class="torch-benzel"><div class="torch-diode"></div></div>
+    <div class="torch-cone"></div>
+    <div class="torch grip"><div class="torch-switch"></div></div>
+    <div class="torch-pommel"></div>
+</div>
+<div id="blackout-hud">
+  <button id="btn-toggle-light"type="button">LIGHTS ON</button>
+</div>
 
   <div class="container">
     <main class="portfolio-grid">
@@ -132,6 +143,23 @@
       SMASHER WORLD • PORTFOLIO • ROBOTICS &amp; AI
     </footer>
   </div>
+  window.addEventListener('mousemove',(e)=>{
+    const x = e.clientX;
+    const y = e.clientY;
+    torch.style.left = x + 'px';
+    torch.style.top = y + 'px';
+    curtain.style.background = `radial-gradient(
+      circle 150px at ${x}px ${y}px,
+      transparent 0%,
+      rgba(0,0,0,0.35) 120px,
+      #000000 156px
+    )`;
+    glow.style.background = `radial-gradient(
+      circle 190px at ${x}px ${y}px,
+      rgba(255, 250, 200, 0.40) 0%,
+      transparent 190px
+    )`;
+  });
 
 </body>
 </html>
