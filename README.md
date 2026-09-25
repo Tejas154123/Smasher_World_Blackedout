@@ -31,6 +31,6 @@ The website contains:
 
 
 
-**Made by Smasher**
+**A Project By Smasher**
 
 
